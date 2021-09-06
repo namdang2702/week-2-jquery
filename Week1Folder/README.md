@@ -16,3 +16,5 @@ Please choose from the following challenges.
 4. acquire the length and width of a rectangle then determine and display what the area and the perimeter of the rectangle should be. 
 
 Your 3 applications should function similar to how the given ones do. Please also make sure your three applications protect against invalid entries. 
+
+Save your work to a repository of your own and pass in a link to it when you done. 
