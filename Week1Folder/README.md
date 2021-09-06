@@ -17,4 +17,4 @@ Please choose from the following challenges.
 
 Your 3 applications should function similar to how the given ones do. Please also make sure your three applications protect against invalid entries. 
 
-Save your work to a repository of your own and pass in a link to it when you done. 
+Save your work to a repository of your own and pass in a link to it when you are done. 
