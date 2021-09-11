@@ -22,4 +22,5 @@ const html = `<p>Score 1 = ${score1}</p>
         <p>Score 3 = ${score3}</p>
            <p>Average score = ${average}</p>`;
 
+
 document.write(html);
