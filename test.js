@@ -3,18 +3,17 @@
 //At the Terminal prompt type: node test
 //Press "enter". 
 //See result from the console logs.
-//Note: any javascript can be checked within the console.log
 
-//simple methods can go straight into the console.log
 
+// simple methods can go straight into the console.log
 console.log("1.",!isNaN("age"))
 console.log("2.",isNaN("123"))
 console.log("3.",isNaN("Hopper") && isNaN("r"))
 console.log("4.",isNaN("Hopper") && isNaN("123"))
 console.log("5.",isNaN("Hopper") || isNaN("123"))
 
-
-//embedded javascript
+//         embedded javascript
+//notice: the logic of any javascript can be checked but to get output showing in the terminal you need to use a console.log().
 
 const rate = 5;
 
@@ -27,3 +26,5 @@ if ( isNaN(rate) ) {
 } else {
     console.log ("The rate is: " + rate + ".");
 }
+
+
