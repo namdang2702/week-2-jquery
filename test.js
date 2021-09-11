@@ -5,12 +5,16 @@
 //See result from the console logs.
 //Note: any javascript can be checked within the console.log
 
+//simple methods can go straight into the console.log
+
 console.log("1.",!isNaN("age"))
 console.log("2.",isNaN("123"))
 console.log("3.",isNaN("Hopper") && isNaN("r"))
 console.log("4.",isNaN("Hopper") && isNaN("123"))
 console.log("5.",isNaN("Hopper") || isNaN("123"))
 
+
+//embedded javascript
 
 const rate = 5;
 
