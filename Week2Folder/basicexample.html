@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="basicexample.html" method="get">
+    <h1>The Miles Per Gallon Calculator</h1>
+    <form action="basicexample.html" method="get" id="email_2">
         <input type="text" id="email_1" name="email_1">
         <input type="submit" id="join_list"
                value="Join List">
     </form>
+    <div id="here"></div>
     
     <script>
+        "use strict";
         const $ = function(selector) {
             return document.querySelector(selector);
         };
@@ -30,7 +33,13 @@
             else {
                 const email1 = $("#email_1").value;
                 alert(email1);
-                console.log(email1)
+                evt.preventDefault();  
+               
+
+                const html = `<p>${email1}</p>`;
+                document.getElementById("here").innerHTML = email1;
+                document.getElementById("email_2").reset();
+              
             }
         };
          
