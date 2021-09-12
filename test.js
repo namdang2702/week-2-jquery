@@ -28,3 +28,41 @@ if ( isNaN(rate) ) {
 }
 
 
+// embedded javascript
+let sum = 0;
+let i = 1;
+ 
+while (i <= 5) {
+    sum += i;                   // adds i to sum
+    i++;
+console.log(sum); 
+}
+console.log(sum);              
+
+//embedded javascript with a for-in loop
+const emoji = require('node-emoji');
+
+const rocketship = emoji.get('rocket');
+const list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13,14,15,16,17,18,19,20]
+const countdown = ["       " + 3,"       " + ".","       " + ".","       " + ".","       " +  2 ,"       " + ".","       " + ".","       " + ".","       " + 1,"       " + ".","       " + ".","       " + ".", "       " + rocketship,"      .","     ...","    .....","   .......","  ........."," ...........",".............","............."]
+
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+const doSomething = async () => {
+  for (const item of list) {
+    await sleep(250)
+    console.log(countdown[item])   
+  }
+}
+
+doSomething()
+
+
+
+
+
+
+
+
