@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner Bill Cost</title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Please enter your bill cost and tip percentage.</h1>
+
+        <form id="bill" name="bill" action="dinner_cost.html" method="get">
+            <div>
+                <label for="cost">Your bill cost:</label>
+                <input type="text" id="cost" name="cost"> <br> <br>
+            </div>
+            <div>
+                <label for="tip">Your tip percentage:</label>
+                <input type="text" id="tip" name="tip">
+            </div>
+            <div>
+                <input type="submit" id="submit_info" value="Submit">
+            </div>
+        </form>
+        <div id="here"></div>
+    </div>
+
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            $("#submit_info").addEventListener("click", evt => {
+                // get user input
+                const billing = $("#cost").value;
+                const tipping = $("#tip").value;
+                const total = parseInt(billing) + parseInt(billing * tipping / 100);
+
+                // create an error message and set it to an empty string
+                let error = "";
+
+                // check user entries – add to error message if invalid
+                if (billing == "" || billing < 0) {
+                    error += "First box is required.\n";
+                }
+                if (tipping == "") {
+                    error += "Second box is optional.\n";
+                }
+                // prevent form submission if there’s an error message
+                if (error != "") {
+                    alert(error);
+                    evt.preventDefault();
+                }
+                evt.preventDefault();
+
+
+                const html = `<p> Your total is: ${total.toFixed(2)}</p>`;
+
+                document.getElementById("here").innerHTML = html;
+                document.getElementById("bill").reset();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Triangle Angles Measurement</title>
+
+</head>
+
+<body>
+    <main>
+        <h1>Please enter your first and second angle measure.</h1>
+
+        <form id="triangle" name="triangle" action="triangle.html" method="get">
+            <div>
+                <label for="angle_1">First angle measure:</label>
+                <input type="text" id="angle_1" name="angle_1"> <br> <br>
+            </div>
+            <div>
+                <label for="angle_2">Second angle measure:</label>
+                <input type="text" id="angle_2" name="angle_2">
+            </div>
+            <div>
+                <!-- <label>&nbsp;</label> -->
+                <input type="submit" id="submit_info" value="Submit">
+                <!-- <input type="button" id="clear_form" value="Clear form"> -->
+            </div>
+        </form>
+        <div id="here"></div>
+    </main>
+
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            $("#submit_info").addEventListener("click", evt => {
+                // get user input
+                const angle1 = $("#angle_1").value;
+                const angle2 = $("#angle_2").value;
+
+                // create an error message and set it to an empty string
+                let error = "";
+
+                // check user entries – add to error message if invalid
+                if (angle1 <= 0) {
+                    error += "First angle is required.\n";
+                }
+                if (angle2 <= 0) {
+                    error += "Second second is required.\n";
+                }
+                // prevent form submission if there’s an error message
+                if (error != "") {
+                    alert(error);
+                    evt.preventDefault();
+                }
+                evt.preventDefault();
+
+                console.log(angle1);
+
+                const html = `<p> Your third angle measure is:${180 - angle1 - angle2}</p>`;
+
+                document.getElementById("here").innerHTML = html;
+                document.getElementById("triangle").reset();
+            });
+        });
+
+    </script>
+</body>
+
+</html>

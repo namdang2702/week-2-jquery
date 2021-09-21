@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rectangle Area and Perimeter </title>
+
+</head>
+
+<body>
+    <div>
+        <h1>Please enter the length and width of a rectangle</h1>
+
+        <form id="rectangle" name="rectangle" action="rectangle.html" method="get">
+            <div>
+                <label for="length">Length:</label>
+                <input type="text" id="length" name="length"> <br> <br>
+            </div>
+            <div>
+                <label for="width">Width:</label>
+                <input type="text" id="width" name="width">
+            </div>
+            <div>
+                <input type="submit" id="submit_info" value="Submit">
+            </div>
+        </form>
+        <div id="here"></div>
+    </div>
+
+
+    <script>
+        const $ = selector => document.querySelector(selector);
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            $("#submit_info").addEventListener("click", evt => {
+                // get user input
+                const recLength = $("#length").value;
+                const recWidth = $("#width").value;
+                const peri = (parseInt(recLength) + parseInt(recWidth))*2;
+
+                // create an error message and set it to an empty string
+                let error = "";
+
+                // check user entries – add to error message if invalid
+                if (recLength == "" || recLength < 0) {
+                    error += "Length is required.\n";
+                }
+                if (recWidth == "" || recWidth < 0 ) {
+                    error += "Width is required.\n";
+                }
+                // prevent form submission if there’s an error message
+                if (error != "") {
+                    alert(error);
+                    evt.preventDefault();
+                }
+                evt.preventDefault();
+
+                const html = `<p> The rectangle area is: ${recLength * recWidth} <br>
+                    The rectangle perimeter is: ${peri} </p>`;
+
+
+                document.getElementById("here").innerHTML = html;
+                document.getElementById("rectangle").reset();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
